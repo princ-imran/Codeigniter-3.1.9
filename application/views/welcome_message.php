@@ -1,89 +1,160 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Welcome to CodeIgniter</title>
+?>
+<!DOCTYPE html>
+<!-- 
+Template Name: Metronic - Responsive Admin Dashboard Template build with Twitter Bootstrap 4
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Contact: support@keenthemes.com
+Follow: www.twitter.com/keenthemes
+Dribbble: www.dribbble.com/keenthemes
+Like: www.facebook.com/keenthemes
+Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
+License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
+-->
+<html lang="en" >
+	<!-- begin::Head -->
+	<head>
+		<meta charset="utf-8" />
+		<title>
+			Metronic | Login Page - 2
+		</title>
+		<meta name="description" content="Latest updates and statistic charts">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!--begin::Web font -->
+		<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+		<script>
+          WebFont.load({
+            google: {"families":["Poppins:300,400,500,600,700","Roboto:300,400,500,600,700"]},
+            active: function() {
+                sessionStorage.fonts = true;
+            }
+          });
+		</script>
+		<!--end::Web font -->
+        <!--begin::Base Styles -->
+		<link href="assets/vendors/base/vendors.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="assets/demo/default/base/style.bundle.css" rel="stylesheet" type="text/css" />
+		<!--end::Base Styles -->
+		<link rel="shortcut icon" href="assets/demo/default/media/img/logo/favicon.ico" />
+	</head>
+	<!-- end::Head -->
+    <!-- end::Body -->
+	<body  class="m--skin- m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default"  >
+		<!-- begin:: Page -->
+		<div class="m-grid m-grid--hor m-grid--root m-page">
+			<div class="m-grid__item m-grid__item--fluid m-grid m-grid--hor m-login m-login--signin m-login--2 m-login-2--skin-1" id="m_login" style="background-image: url(assets/app/media/img//bg/bg-1.jpg);">
+				<div class="m-grid__item m-grid__item--fluid m-login__wrapper">
+					<div class="m-login__container">
+						<div class="m-login__logo">
+							<a href="#">
+								<img src="assets/app/media/img//logos/logo-1.png">
+							</a>
+						</div>
+						<div class="m-login__signin">
+							<div class="m-login__head">
+								<h3 class="m-login__title">
+									Sign In To Admin <br>
+									<?php
+										$message = $this->session->userdata('message');
+										if($message){
+											echo '<div role="alert" class="alert alert-dismissible fade show">
+												<button aria-label="Close" data-dismiss="alert" class="close" type="button"></button>
+												<span class="m--font-danger"> Incorrect username or password. <br>Please try again. </span>
+												
+											</div>											
+											';
+											$this->session->unset_userdata('message');
+										}
 
-	<style type="text/css">
-
-	::selection { background-color: #E13300; color: white; }
-	::-moz-selection { background-color: #E13300; color: white; }
-
-	body {
-		background-color: #fff;
-		margin: 40px;
-		font: 13px/20px normal Helvetica, Arial, sans-serif;
-		color: #4F5155;
-	}
-
-	a {
-		color: #003399;
-		background-color: transparent;
-		font-weight: normal;
-	}
-
-	h1 {
-		color: #444;
-		background-color: transparent;
-		border-bottom: 1px solid #D0D0D0;
-		font-size: 19px;
-		font-weight: normal;
-		margin: 0 0 14px 0;
-		padding: 14px 15px 10px 15px;
-	}
-
-	code {
-		font-family: Consolas, Monaco, Courier New, Courier, monospace;
-		font-size: 12px;
-		background-color: #f9f9f9;
-		border: 1px solid #D0D0D0;
-		color: #002166;
-		display: block;
-		margin: 14px 0 14px 0;
-		padding: 12px 10px 12px 10px;
-	}
-
-	#body {
-		margin: 0 15px 0 15px;
-	}
-
-	p.footer {
-		text-align: right;
-		font-size: 11px;
-		border-top: 1px solid #D0D0D0;
-		line-height: 32px;
-		padding: 0 10px 0 10px;
-		margin: 20px 0 0 0;
-	}
-
-	#container {
-		margin: 10px;
-		border: 1px solid #D0D0D0;
-		box-shadow: 0 0 8px #D0D0D0;
-	}
-	</style>
-</head>
-<body>
-
-<div id="container">
-	<h1>Welcome to CodeIgniter!</h1>
-
-	<div id="body">
-		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-
-		<p>If you would like to edit this page you'll find it located at:</p>
-		<code>application/views/welcome_message.php</code>
-
-		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/Welcome.php</code>
-
-		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
-	</div>
-
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
-</div>
-
-</body>
+										$sign_out_message = $this->session->userdata('sign_out_message');
+										if($sign_out_message){
+											echo '<div role="alert" class="alert alert-dismissible fade show">
+												<button aria-label="Close" data-dismiss="alert" class="close" type="button"></button>
+												<span class="m--font-danger"> Sign Out Successfully </span>		
+											</div>											
+											';
+											$this->session->unset_userdata('sign_out_message');
+										}
+									 ?>
+								</h3>
+							</div>
+							<form class="m-login__form m-form" action="admin_signin" method="post">
+								<div class="form-group m-form__group">
+									<input class="form-control m-input"   type="text" placeholder="Email" name="admin_email" autocomplete="off">
+								</div>
+								<div class="form-group m-form__group">
+									<input class="form-control m-input m-login__form-input--last" type="password" placeholder="Password" name="admin_pass">
+								</div>
+								<div class="row m-login__form-sub">
+									<div class="col m--align-left m-login__form-left">
+										<label class="m-checkbox  m-checkbox--light">
+											<input type="checkbox" name="remember">
+											Remember me
+											<span></span>
+										</label>
+									</div>
+									<div class="col m--align-right m-login__form-right">
+										<a href="javascript:;" id="m_login_forget_password" class="m-link">
+											Forget Password ?
+										</a>
+									</div>
+								</div>
+								<div class="m-login__form-action">
+									<button id="m_login_signin_submit" class="btn btn-focus m-btn m-btn--pill m-btn--custom m-btn--air  m-login__btn m-login__btn--primary">
+										Sign In
+									</button>
+								</div>
+							</form>
+						</div>						
+						<div class="m-login__forget-password">
+							<div class="m-login__head">
+								<h3 class="m-login__title">
+									Forgotten Password ?
+								</h3>
+								<div class="m-login__desc">
+									Enter your email to reset your password:
+								</div>
+							</div>
+							<form class="m-login__form m-form" action="">
+								<div class="form-group m-form__group">
+									<input class="form-control m-input" type="text" placeholder="Email" name="email" id="m_email" autocomplete="off">
+								</div>
+								<div class="m-login__form-action">
+									<button id="m_login_forget_password_submit" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn m-login__btn--primary">
+										Request
+									</button>
+									&nbsp;&nbsp;
+									<button id="m_login_forget_password_cancel" class="btn m-btn m-btn--pill m-btn--custom m-btn--air m-login__btn">
+										Cancel
+									</button>
+								</div>
+							</form>
+						</div>
+						<div class="m-login__account">
+							<span class="m-login__account-msg">
+								Don't have an account yet ?
+							</span>
+							&nbsp;&nbsp;
+							<a href="javascript:;" id="m_login_signup" class="m-link m-link--light m-login__account-link">
+								Sign Up
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end:: Page -->
+    	<!--begin::Base Scripts -->
+		<script src="assets/vendors/base/vendors.bundle.js" type="text/javascript"></script>
+		<script src="assets/demo/default/base/scripts.bundle.js" type="text/javascript"></script>
+		<!--end::Base Scripts -->   
+        <!--begin::Page Snippets 
+		<script src="assets/snippets/custom/pages/user/login.js" type="text/javascript"></script>-->
+		<!--end::Page Snippets -->
+	</body>
+	<!-- end::Body -->
 </html>

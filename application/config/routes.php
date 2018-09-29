@@ -53,6 +53,14 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['admin_login'] = 'admin/index';
+$route['admin_signin'] = 'admin/admin_signin';
+$route['admin_signout'] = 'admin/admin_signout';
+$route['admin_dashboard'] = 'admin/index';
+$route['admin_edit'] = 'admin/edit_admin';
 
-$route['sign_up'] = 'admin/sign_up';
+$route['add_student'] = 'student/add_student';
+$route['save_student'] = 'student/save_student';
+$route['student_list'] = 'student/student_list';
+$route['edit_student/(.+)'] = 'student/edit_student/$1';
+$route['update_student'] = 'student/update_student';
+$route['delet_student/(.+)'] = 'student/delet_student/$1';
