@@ -53,7 +53,7 @@
 					<th>
 						Action
 					</th>
-				</tr>
+				</tr>				
 				<?php
 				$sl = 1;
 				foreach ($all_student_list as $single_student_info){

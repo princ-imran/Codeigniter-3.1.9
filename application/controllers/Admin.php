@@ -44,9 +44,34 @@ class Admin extends CI_Controller {
 		$this->load->view('pages/index',$data);		
 	}
 
-	public function edit_admin()	{
+	public function admin_list()	{
+		$data = array();	
+		$this->load->model('Admin_Model');	
+		$data['all_admin_list'] = $this->Admin_Model->all_admin_list();
+		$data ['dashboard_content'] = $this->load->view('pages/edit_admin',$data,true);
+		$this->load->view('pages/index',$data);	
+	}
+
+	public function add_admin()	{
+		$data = array();	
+		$this->load->model('Admin_Model');		
+		$data ['dashboard_content'] = $this->load->view('pages/add_admin',$data,true);
+		$this->load->view('pages/index',$data);	
+	}
+
+	public function save_admin()	{
+		$data = array();	
+		$this->load->model('Admin_Model');
+		$data['save_admin'] = $this->Admin_Model->save_admin();		
+		$data ['dashboard_content'] = $this->load->view('pages/add_admin',$data,true);
+		$this->load->view('pages/index',$data);	
+	}
+
+	public function edit_admin(){		
 		$data = array();
-		$data ['dashboard_content'] = $this->load->view('pages/edit_admin','',true);
+		$this->load->model('Admin_Model');
+		$data['admin_info_by_id'] = $this->Admin_Model->admin_info_by_id();
+		$data ['dashboard_content'] = $this->load->view('pages/edit_admin',$data,true);
 		$this->load->view('pages/index',$data);		
 	}
 }

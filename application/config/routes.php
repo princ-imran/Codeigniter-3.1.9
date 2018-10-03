@@ -56,7 +56,9 @@ $route['translate_uri_dashes'] = FALSE;
 $route['admin_signin'] = 'admin/admin_signin';
 $route['admin_signout'] = 'admin/admin_signout';
 $route['admin_dashboard'] = 'admin/index';
-$route['admin_edit'] = 'admin/edit_admin';
+$route['add_admin'] = 'admin/add_admin';
+$route['save_admin'] = 'admin/save_admin';
+$route['admin_edit/(.+)'] = 'admin/edit_admin/1';
 
 $route['add_student'] = 'student/add_student';
 $route['save_student'] = 'student/save_student';

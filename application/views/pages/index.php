@@ -573,9 +573,17 @@
 									</ul>
 								</div>
 							</li>
-
 							<li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
-								<a  href="<?php echo base_url() ?>admin_edit" class="m-menu__link ">
+								<a  href="<?php echo base_url() ?>add_admin" class="m-menu__link ">
+									<span class="m-menu__item-here"></span>
+									<i class="m-menu__link-icon flaticon-light"></i>
+									<span class="m-menu__link-text">
+										Add Admin Image
+									</span>
+								</a>
+							</li>															
+							<li class="m-menu__item " aria-haspopup="true"  m-menu-link-redirect="1">
+								<a  href="<?php echo base_url() ?>admin_edit/1" class="m-menu__link ">
 									<span class="m-menu__item-here"></span>
 									<i class="m-menu__link-icon flaticon-light"></i>
 									<span class="m-menu__link-text">
